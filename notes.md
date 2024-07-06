@@ -895,24 +895,26 @@ import NextAuth from 'next-auth'
 ```
 This line imports the `NextAuth` function from the `next-auth` library. `NextAuth` is a popular library used for adding authentication to Next.js applications.
 
-### 2. Importing authConfig
 
-import { authConfig } from './auth.config'
 ```
+### 2. Importing authConfig
+import { authConfig } from './auth.config'
 This line imports an authentication configuration object from a file named `auth.config`. The `authConfig` object typically contains various settings and options needed to configure NextAuth for your application, such as providers (e.g., Google, Facebook), callbacks, pages, etc.
 
 ### 3. Exporting NextAuth Configuration
 
 export default NextAuth(authConfig).auth
-```
 This line exports the default NextAuth handler, which is configured using the `authConfig` object. By calling `NextAuth(authConfig)`, you initialize NextAuth with your custom configuration. The `.auth` part indicates that you're specifically exporting the authentication handler from NextAuth.
 
 ### 4. Exporting a Configuration Object
 
+```
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)']
 }
 ```
+
+
 This line exports a configuration object for Next.js middleware. The `matcher` property defines a pattern to match specific routes or paths. Here's a detailed breakdown:
 
 - `matcher`: Specifies which routes the middleware should apply to.
@@ -931,11 +933,6 @@ The matcher ensures that the NextAuth middleware only applies to the relevant ro
 - **config** with `matcher` specifies which routes the NextAuth middleware should apply to, excluding certain paths.
 
 This setup is typical for integrating NextAuth into a Next.js application, ensuring authentication is applied only to the appropriate routes.
-
-
-
-
-
 
 
 
